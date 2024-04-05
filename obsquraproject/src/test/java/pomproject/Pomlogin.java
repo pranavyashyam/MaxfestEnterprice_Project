@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.google.common.io.Files;
 
-import commonUtility.WaitUtility;
+import WaitUtility.WaitUtility;
 import webDriverUtilty.DriverAction;
 
 public class Pomlogin {
@@ -22,7 +22,7 @@ public class Pomlogin {
 	WebDriver driver;
 	WaitUtility wait;
 	DriverAction action;
-
+	 static String configpath="\\src\\main\\resources\\Screenshot\\test";
 	public Pomlogin(WebDriver driver) {
 
 		this.driver = driver;
@@ -83,8 +83,9 @@ public class Pomlogin {
  	               File SrcFile=scrShot.getScreenshotAs(OutputType.FILE); 
   
  	           //Move image file to new destination 
-  
- 	               File DestFile=new File("C:\\Users\\syamr\\OneDrive\\Desktop\\nandu\\selnium\\.metadata\\obsquraproject\\src\\main\\resources\\Screenshot\\test"+timestamp+".jpg"); 
+ 	              String projectpath=System.getProperty("user.dir");
+ 	            
+ 	               File DestFile=new File(projectpath+configpath+timestamp+".jpg"); 
   
  	               //Copy file at destination 
   

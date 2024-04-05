@@ -9,8 +9,8 @@
         <methods>
           <include name="closereport"/>
           <include name="extendreportgenerate"/>
-          <include name="clickUnit"/>
           <include name="afterTest"/>
+          <include name="Login"/>
           <include name="beforeTest"/>
         </methods>
       </class> <!-- Testproject.DemoProject -->

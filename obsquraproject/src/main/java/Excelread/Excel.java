@@ -15,6 +15,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
  * */
 public class Excel {
+	
+	static String configpath="\\src\\main\\resources\\Excelpackage\\Book2.xlsx";
 	public static XSSFWorkbook w;// used to save excel workbook object
 
 	public static XSSFSheet s;// used to hold excel sheet object
@@ -22,8 +24,9 @@ public class Excel {
 	public static FileInputStream f;
 
 	public static String readStringData(int i, int j) throws IOException {
+		String projectpath=System.getProperty("user.dir");
 
-		f = new FileInputStream("C:\\Users\\syamr\\eclipse-workspace\\ExcelRead\\src\\main\\resources\\Book2.xlsx");
+		f = new FileInputStream(projectpath+configpath);
 
 		w = new XSSFWorkbook(f);// location will assign to w
 
@@ -38,9 +41,9 @@ public class Excel {
 	}
 
 	public static String readIntegerData(int i, int j) throws IOException {
+		String projectpath=System.getProperty("user.dir");
 
-		f = new FileInputStream("C:\\Users\\syamr\\eclipse-workspace\\ExcelRead\\src\\main\\resources\\Student.xlsx");
-
+		f = new FileInputStream(projectpath+"\\src\\main\\resources\\Excelpackage\\Book2.xlsx");
 		w = new XSSFWorkbook(f);
 
 		s = w.getSheet("Sheet1");

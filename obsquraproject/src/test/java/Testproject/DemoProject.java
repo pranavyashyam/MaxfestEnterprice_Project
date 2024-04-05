@@ -6,9 +6,10 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import Excelread.Excel;
 import Extendreports.ExtentTestManager;
 import commonUtility.PropertyFileReader;
-import commonUtility.WaitUtility;
+import WaitUtility.WaitUtility;
 import pomproject.POMaddbrand;
 import pomproject.POMaddcategory;
 import pomproject.POMaddproduct;
@@ -18,8 +19,7 @@ import pomproject.POMsearchcategory;
 import pomproject.POMsearchunit;
 import pomproject.Pomlogin;
 import pomproject.Searchbrand;
-import webDriverUtility.BrowserUtility;
-import webDriverUtility.Excel;
+import webDriverUtilty.BrowserUtility;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -76,10 +76,12 @@ public class DemoProject extends ExtentTestManager {
 
 	public void Login() throws IOException, InterruptedException {
 		objLogin = new Excel();
-		BrowserUtility objutil = new BrowserUtility();
 		wait = new WaitUtility(driver);
-		String usernme = objLogin.readStringData(1, 0);
-		String pswd = objLogin.readIntegerData(1, 1);
+		
+		String usernme = Excel.readStringData(1, 0);
+		String pswd = Excel.readIntegerData(1, 1);
+		System.out.println( usernme);
+		System.out.println( pswd);
 		login = new Pomlogin(driver);
 		login.username(usernme);
 		login.password(pswd);
@@ -182,7 +184,7 @@ public class DemoProject extends ExtentTestManager {
 		// search_category=new POMsearchcategory(driver);
 		wait.Normalwait(2000);
 		add_pro.clickpro();
-		add_pro.proName(objPropertyFileReader.readConfigFile("addProduct_data"));
+		add_pro.proName(objPropertyFileReader.readConfigFile("Product_data"));
 		wait.Normalwait(2000);
 		add_pro.DropdownselectByIndex(1);
 		wait.Normalwait(2000);
