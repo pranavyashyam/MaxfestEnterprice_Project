@@ -109,13 +109,19 @@ public class DemoProject extends ExtentTestManager {
 		objPropertyFileReader = new PropertyFileReader();
 		wait = new WaitUtility(driver);
 		brand = new POMaddbrand(driver);
-		search_brand = new Searchbrand(driver);
 		brand.clickbrand();
 		brand.clickbrand1();
 		wait.Normalwait(2000);
 		brand.brandName(objPropertyFileReader.readConfigFile("brand_data"));
 		brand.brandDesc(objPropertyFileReader.readConfigFile("brand_Desc"));
 		brand.brandSave();
+		test.log(Status.PASS, "Test to validate add brands ");
+	}
+	@Test(priority = 5, enabled = true, groups = { "functional" })
+	public void SearchBrand() throws InterruptedException, IOException {
+		objPropertyFileReader = new PropertyFileReader();
+		wait = new WaitUtility(driver);
+		search_brand = new Searchbrand(driver);
 		wait.Normalwait(7000);
 		search_brand.usernameSendKeys(objPropertyFileReader.readConfigFile("brand_data"));
 		wait.Normalwait(7000);
@@ -125,15 +131,14 @@ public class DemoProject extends ExtentTestManager {
 		objassert.assertEquals(brand_data, data);
 		objassert.assertAll();
 		System.out.println("brand data found");
-		test.log(Status.PASS, "Test to validate add brands &search brands functionality");
+		test.log(Status.PASS, "Test to search brands functionality");
 	}
 
-	@Test(priority = 5, enabled = true, groups = { "functional" })
+	@Test(priority = 6, enabled = true, groups = { "functional" })
 	public void clickUnit() throws InterruptedException, IOException {
 		objPropertyFileReader = new PropertyFileReader();
 		wait = new WaitUtility(driver);
 		unit = new POMaddunit(driver);
-		search_unit = new POMsearchunit(driver);
 		unit.clickBtn1();
 		wait.Normalwait(7000);
 		unit.usernameSendKeys(objPropertyFileReader.readConfigFile("unit_data"));
@@ -141,6 +146,13 @@ public class DemoProject extends ExtentTestManager {
 		unit.DropdownselectByIndex(1);
 		unit.unitSave();
 		wait.Normalwait(3000);
+		test.log(Status.PASS, "Test to validate add units functionality");
+	}
+	@Test(priority = 7, enabled = true, groups = { "functional" })
+	public void SerachUnit() throws InterruptedException, IOException {
+		objPropertyFileReader = new PropertyFileReader();
+		wait = new WaitUtility(driver);
+		search_unit = new POMsearchunit(driver);
 		search_unit.usernameSendKeys(objPropertyFileReader.readConfigFile("unit_data"));
 		wait.Normalwait(2000);
 		String unit_data = objPropertyFileReader.readConfigFile("unit_data");
@@ -149,15 +161,14 @@ public class DemoProject extends ExtentTestManager {
 		objassert.assertEquals(unit_data, data);
 		objassert.assertAll();
 		System.out.println(" unit data found");
-		test.log(Status.PASS, "Test to validate add units&search units functionality");
+		test.log(Status.PASS, "Test to validate search units functionality");
 	}
 
-	@Test(priority = 6, enabled = true, groups = { "functional" })
+	@Test(priority = 8, enabled = true, groups = { "functional" })
 	public void clickCategories() throws InterruptedException, IOException {
 		objPropertyFileReader = new PropertyFileReader();
 		wait = new WaitUtility(driver);
 		category = new POMaddcategory(driver);
-		search_category = new POMsearchcategory(driver);
 		category.clickcategory();
 		category.clickAddcategory();
 		wait.Normalwait(2000);
@@ -165,6 +176,15 @@ public class DemoProject extends ExtentTestManager {
 		category.categoryDesc(objPropertyFileReader.readConfigFile("category_Desc"));
 		category.categorySave();
 		wait.Normalwait(2000);
+		test.log(Status.PASS, "Test to validate add category   functionality");
+
+	}
+	@Test(priority = 9, enabled = true, groups = { "functional" })
+	public void SearchCategories() throws InterruptedException, IOException {
+		objPropertyFileReader = new PropertyFileReader();
+		wait = new WaitUtility(driver);
+		search_category = new POMsearchcategory(driver);
+		category.clickcategory();
 		search_category.usernameSendKeys(objPropertyFileReader.readConfigFile("category_data"));
 		wait.Normalwait(2000);
 		String category_data = objPropertyFileReader.readConfigFile("category_data");
@@ -173,11 +193,11 @@ public class DemoProject extends ExtentTestManager {
 		objassert.assertEquals(category_data, data);
 		objassert.assertAll();
 		System.out.println(" category data found");
-		test.log(Status.PASS, "Test to validate add category &search category  functionality");
+		test.log(Status.PASS, "Test to validate search category  functionality");
 
 	}
 
-	@Test(priority = 7, enabled = true, groups = { "functional" })
+	@Test(priority = 10, enabled = true, groups = { "functional" })
 	public void addproducts() throws InterruptedException, IOException {
 		wait = new WaitUtility(driver);
 		add_pro = new POMaddproduct(driver);
@@ -226,7 +246,7 @@ public class DemoProject extends ExtentTestManager {
 
 	@AfterTest
 	public void afterTest() {
-		// driver.close();
+		driver.close();
 	}
 
 	@DataProvider(name = "data-provider")
