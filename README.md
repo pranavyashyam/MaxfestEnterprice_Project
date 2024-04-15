@@ -1,1 +1,1 @@
-# obsquraproject
+# MaxFestEnterprises project
