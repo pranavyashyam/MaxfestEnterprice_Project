@@ -22,9 +22,10 @@ public class POMsearchcategory {
 	}
 	@FindBy(xpath = "//*[@id=\"category_table_filter\"]/label/input")
 	public WebElement searchcategory;
-	public void usernameSendKeys(String xyz) {
-
+	public void usernameSendKeys(String xyz) throws InterruptedException {
+		
 		action.sendkeys(searchcategory, xyz);
+		wait.Normalwait(5000);
 
 	}
 	public String getTablevalue(String readConfigFile) {

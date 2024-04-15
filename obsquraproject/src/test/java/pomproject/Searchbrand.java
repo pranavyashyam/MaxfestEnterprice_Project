@@ -21,9 +21,10 @@ public class Searchbrand {
 	}
 	@FindBy(xpath = "//*[@id=\"brands_table_filter\"]/label/input")
 	public WebElement searchbrands;
-	public void usernameSendKeys(String value) {
-
+	public void usernameSendKeys(String value) throws InterruptedException {
+		wait.Normalwait(3000);
 		action.sendkeys(searchbrands,value);
+		wait.Normalwait(9000);
 
 	}
 	

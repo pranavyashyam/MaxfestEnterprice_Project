@@ -51,53 +51,59 @@ public class POMaddproduct {
 	@FindBy (xpath="//*[@id=\"expiry_period_type\"]")
 	public WebElement expiresdropdown;
 
-	public void clickpro() {
+	public void clickpro() throws InterruptedException {
 		// TODO Auto-generated method stub
+		wait.Normalwait(2000);
 		 driver.get("https://qalegend.com/billing/public/products/create");
 			WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10000)); 
 			wait.until(ExpectedConditions.elementToBeClickable(addProduct));
 		action.click(addProduct);
 	}
 	
-	public void proName(String Value) throws IOException {
-
+	public void proName(String Value) throws IOException, InterruptedException {
+		wait.Normalwait(2000);
 		action.sendkeys(Productname, Value);
 
 	}
-	public void proName1(String Value) throws IOException {
-
+	public void proName1(String Value) throws IOException, InterruptedException {
+		wait.Normalwait(2000);
 		action.sendkeys(alertqty, Value);
 
 	}
-	public void proName2(String Value) throws IOException {
-
+	public void proName2(String Value) throws IOException, InterruptedException {
+		wait.Normalwait(2000);
 		action.sendkeys(exctax, Value);
 
 	}
-	public void proName3(String Value) throws IOException {
-
+	public void proName3(String Value) throws IOException, InterruptedException {
+		wait.Normalwait(2000);
 		action.sendkeys(inctax, Value);
 
 	}
-	public void proName4(String Value) throws IOException {
-
+	public void proName4(String Value) throws IOException, InterruptedException {
+		wait.Normalwait(2000);
 		action.sendkeys(expires, Value);
 
 	}
-	public void DropdownselectByIndex0(int value) {
+	public void DropdownselectByIndex0(int value) throws InterruptedException {
+		wait.Normalwait(2000);
 		action.DropdownselectByIndex(expiresdropdown, value);
 	}
-	public void DropdownselectByIndex(int value) {
+	public void DropdownselectByIndex(int value) throws InterruptedException {
+		wait.Normalwait(2000);
 		action.DropdownselectByIndex(unitselect, value);
 	}
-	public void DropdownselectByIndex1(int value) {
+	public void DropdownselectByIndex1(int value) throws InterruptedException {
+		wait.Normalwait(2000);
 		action.DropdownselectByIndex(barcodetype, value);
 	}
 	
-	public void DropdownselectByIndex111(int value) {
+	public void DropdownselectByIndex111(int value) throws InterruptedException {
+		wait.Normalwait(2000);
 		action.DropdownselectByIndex(producttype, value);
 	}
-	public void clicksave() {
+	public void clicksave() throws InterruptedException {
+		wait.Normalwait(2000);
 		action.click(productsave);
 	}
 

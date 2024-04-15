@@ -56,9 +56,10 @@ public class POMaddbrand {
 			action.sendkeys(branddesc, Value);
 			
 	}
-	public void clickbrand1() {
+	public void clickbrand1() throws InterruptedException {
 		// TODO Auto-generated method stub
 		action.click(addbrands);
+		wait.Normalwait(2000);
 	}
 	public void brandSave() {
 		// TODO Auto-generated method stub
@@ -73,6 +74,13 @@ public class POMaddbrand {
 	public String getTablevalue(String readConfigFile) {
 		WebElement tabledata=driver.findElement(By.xpath("//table[@id='brands_table']//tbody/tr[1]/td[1]"));// TODO Auto-generated method stub
 		String data=tabledata.getText();
+		return data;// TODO Auto-generated method stub
+		
+	}
+
+	public String getTextBrandAdd() {
+		WebElement headertext=driver.findElement(By.xpath("/html/body/div[2]/div[1]/section[1]/h1"));// TODO Auto-generated method stub
+		String data=headertext.getText();
 		return data;// TODO Auto-generated method stub
 		
 	}

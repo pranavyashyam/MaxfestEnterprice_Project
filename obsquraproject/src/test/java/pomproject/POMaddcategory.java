@@ -2,6 +2,7 @@ package pomproject;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,10 +38,10 @@ public class POMaddcategory {
 
 		action.click(categories);	
 	}
-	public void clickAddcategory() {
-		// TODO Auto-generated method stub
-
+	public void clickAddcategory() throws InterruptedException {
+		// TODO Auto-generated method stud
 		action.click(addcategory);	
+		wait.Normalwait(2000);
 	}
 	
 	 public void categoryName(String Value)throws IOException   {
@@ -55,10 +56,17 @@ public class POMaddcategory {
 			action.sendkeys(categorycode, Value);
 			
 	}
-	 public void categorySave() {
+	 public void categorySave() throws InterruptedException {
 			// TODO Auto-generated method stub
 			action.click(categorysave);
+			wait.Normalwait(2000);
 		}
+	public String getTextCategoryAdd() {
+		WebElement alertmsg = driver.findElement(By.xpath("/html/body/div[2]/div[1]/section[1]/h1"));
+		String message = alertmsg.getText();// TODO Auto-generated method stub
+		return message;// TODO Auto-generated method stub
+	
+	}
 
 	
 }

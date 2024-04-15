@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+<testng-results ignored="2" total="15" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-11T10:24:51 IST" name="Suite" finished-at="2024-04-11T10:27:02 IST" duration-ms="130879">
+  <suite started-at="2024-04-15T18:29:15 IST" name="Suite" finished-at="2024-04-15T18:31:11 IST" duration-ms="116837">
     <groups>
       <group name="functional">
-        <method signature="DemoProject.Invalidlogin(java.lang.String,java.lang.String)[pri:1, instance:Testproject.DemoProject@72d1ad2e]" name="Invalidlogin" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.Login()[pri:2, instance:Testproject.DemoProject@72d1ad2e]" name="Login" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.SearchBrand()[pri:5, instance:Testproject.DemoProject@72d1ad2e]" name="SearchBrand" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.SearchCategories()[pri:9, instance:Testproject.DemoProject@72d1ad2e]" name="SearchCategories" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.SerachUnit()[pri:7, instance:Testproject.DemoProject@72d1ad2e]" name="SerachUnit" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.addproducts()[pri:10, instance:Testproject.DemoProject@72d1ad2e]" name="addproducts" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.alerttour()[pri:3, instance:Testproject.DemoProject@72d1ad2e]" name="alerttour" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.clickBrand()[pri:4, instance:Testproject.DemoProject@72d1ad2e]" name="clickBrand" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.clickCategories()[pri:8, instance:Testproject.DemoProject@72d1ad2e]" name="clickCategories" class="Testproject.DemoProject"/>
-        <method signature="DemoProject.clickUnit()[pri:6, instance:Testproject.DemoProject@72d1ad2e]" name="clickUnit" class="Testproject.DemoProject"/>
+        <method signature="MaxFestProject.Invalidlogin(java.lang.String,java.lang.String)[pri:1, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="Invalidlogin" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.Login()[pri:2, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="Login" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.SearchBrand()[pri:5, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="SearchBrand" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.SearchCategories()[pri:9, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="SearchCategories" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.SerachUnit()[pri:7, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="SerachUnit" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.addproducts()[pri:10, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="addproducts" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.alerttour()[pri:3, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="alerttour" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.clickBrand()[pri:4, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="clickBrand" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.clickCategories()[pri:8, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="clickCategories" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestProject.clickUnit()[pri:6, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" name="clickUnit" class="MaxFestprojectPackage.MaxFestProject"/>
+        <method signature="MaxFestproject2.Invalidlogin(java.lang.String,java.lang.String)[pri:1, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" name="Invalidlogin" class="MaxFestprojectPackage.MaxFestproject2"/>
+        <method signature="MaxFestproject2.Login()[pri:2, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" name="Login" class="MaxFestprojectPackage.MaxFestproject2"/>
+        <method signature="MaxFestproject2.alerttour()[pri:3, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" name="alerttour" class="MaxFestprojectPackage.MaxFestproject2"/>
       </group> <!-- functional -->
     </groups>
-    <test started-at="2024-04-11T10:24:51 IST" name="Test" finished-at="2024-04-11T10:27:02 IST" duration-ms="130879">
-      <class name="Testproject.DemoProject">
-        <test-method is-config="true" signature="extendreportgenerate()[pri:0, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:24:50 IST" name="extendreportgenerate" finished-at="2024-04-11T10:24:51 IST" duration-ms="305" status="PASS">
+    <test started-at="2024-04-15T18:29:15 IST" name="Test2" finished-at="2024-04-15T18:30:02 IST" duration-ms="47342">
+      <class name="MaxFestprojectPackage.MaxFestproject2">
+        <test-method is-config="true" signature="extendreportgenerate()[pri:0, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" started-at="2024-04-15T18:29:14 IST" name="extendreportgenerate" finished-at="2024-04-15T18:29:15 IST" duration-ms="259" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extendreportgenerate -->
-        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String)[pri:0, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:24:51 IST" name="beforeTest" finished-at="2024-04-11T10:25:06 IST" duration-ms="15783" status="PASS">
+        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String)[pri:0, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" started-at="2024-04-15T18:29:15 IST" name="beforeTest" finished-at="2024-04-15T18:29:22 IST" duration-ms="7380" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Chrome]]>
+                <![CDATA[Firefox]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[https://qalegend.com/billing/public/products]]>
+                <![CDATA[ https://qalegend.com/billing/public/products]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="Invalidlogin(java.lang.String,java.lang.String)[pri:1, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:25:07 IST" name="Invalidlogin" data-provider="data-provider" finished-at="2024-04-11T10:25:10 IST" duration-ms="3396" status="PASS">
+        <test-method signature="Invalidlogin(java.lang.String,java.lang.String)[pri:1, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" started-at="2024-04-15T18:29:22 IST" name="Invalidlogin" data-provider="data-provider" finished-at="2024-04-15T18:29:27 IST" duration-ms="5466" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,51 +58,99 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Invalidlogin -->
-        <test-method signature="Login()[pri:2, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:25:10 IST" name="Login" finished-at="2024-04-11T10:25:31 IST" duration-ms="20736" status="PASS">
+        <test-method signature="Login()[pri:2, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" started-at="2024-04-15T18:29:27 IST" name="Login" finished-at="2024-04-15T18:29:54 IST" duration-ms="26456" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="alerttour()[pri:3, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:25:31 IST" name="alerttour" finished-at="2024-04-11T10:25:31 IST" duration-ms="71" status="PASS">
+        <test-method signature="alerttour()[pri:3, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" started-at="2024-04-15T18:29:54 IST" name="alerttour" finished-at="2024-04-15T18:30:00 IST" duration-ms="6290" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- alerttour -->
-        <test-method signature="clickBrand()[pri:4, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:25:31 IST" name="clickBrand" finished-at="2024-04-11T10:25:35 IST" duration-ms="4002" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickBrand -->
-        <test-method signature="SearchBrand()[pri:5, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:25:35 IST" name="SearchBrand" finished-at="2024-04-11T10:25:49 IST" duration-ms="14286" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchBrand -->
-        <test-method signature="clickUnit()[pri:6, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:25:49 IST" name="clickUnit" finished-at="2024-04-11T10:26:03 IST" duration-ms="13512" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickUnit -->
-        <test-method signature="SerachUnit()[pri:7, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:26:03 IST" name="SerachUnit" finished-at="2024-04-11T10:26:05 IST" duration-ms="2222" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SerachUnit -->
-        <test-method signature="clickCategories()[pri:8, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:26:05 IST" name="clickCategories" finished-at="2024-04-11T10:26:11 IST" duration-ms="5586" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickCategories -->
-        <test-method signature="SearchCategories()[pri:9, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:26:11 IST" name="SearchCategories" finished-at="2024-04-11T10:26:14 IST" duration-ms="3338" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchCategories -->
-        <test-method signature="addproducts()[pri:10, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:26:14 IST" name="addproducts" finished-at="2024-04-11T10:27:02 IST" duration-ms="47504" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addproducts -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:27:02 IST" name="afterTest" finished-at="2024-04-11T10:27:02 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" started-at="2024-04-15T18:30:00 IST" name="afterTest" finished-at="2024-04-15T18:30:02 IST" duration-ms="1654" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="closereport()[pri:0, instance:Testproject.DemoProject@72d1ad2e]" started-at="2024-04-11T10:27:02 IST" name="closereport" finished-at="2024-04-11T10:27:03 IST" duration-ms="1094" status="PASS">
+        <test-method is-config="true" signature="closereport()[pri:0, instance:MaxFestprojectPackage.MaxFestproject2@3023df74]" started-at="2024-04-15T18:31:11 IST" name="closereport" finished-at="2024-04-15T18:31:12 IST" duration-ms="842" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closereport -->
-      </class> <!-- Testproject.DemoProject -->
-    </test> <!-- Test -->
+      </class> <!-- MaxFestprojectPackage.MaxFestproject2 -->
+    </test> <!-- Test2 -->
+    <test started-at="2024-04-15T18:29:15 IST" name="Test1" finished-at="2024-04-15T18:31:11 IST" duration-ms="116837">
+      <class name="MaxFestprojectPackage.MaxFestProject">
+        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String)[pri:0, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:29:15 IST" name="beforeTest" finished-at="2024-04-15T18:29:25 IST" duration-ms="10570" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ https://qalegend.com/billing/public/products]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="Invalidlogin(java.lang.String,java.lang.String)[pri:1, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:29:25 IST" name="Invalidlogin" data-provider="data-provider" finished-at="2024-04-15T18:29:29 IST" duration-ms="4044" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[A23456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Invalidlogin -->
+        <test-method signature="Login()[pri:2, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:29:29 IST" name="Login" finished-at="2024-04-15T18:29:37 IST" duration-ms="7607" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="alerttour()[pri:3, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:29:37 IST" name="alerttour" finished-at="2024-04-15T18:29:40 IST" duration-ms="3122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alerttour -->
+        <test-method signature="clickBrand()[pri:4, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:29:40 IST" name="clickBrand" finished-at="2024-04-15T18:29:45 IST" duration-ms="4879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickBrand -->
+        <test-method signature="SearchBrand()[pri:5, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:29:45 IST" name="SearchBrand" finished-at="2024-04-15T18:29:57 IST" duration-ms="12162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchBrand -->
+        <test-method signature="clickUnit()[pri:6, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:29:57 IST" name="clickUnit" finished-at="2024-04-15T18:30:15 IST" duration-ms="17750" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickUnit -->
+        <test-method signature="SerachUnit()[pri:7, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:30:15 IST" name="SerachUnit" finished-at="2024-04-15T18:30:19 IST" duration-ms="4190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SerachUnit -->
+        <test-method signature="clickCategories()[pri:8, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:30:19 IST" name="clickCategories" finished-at="2024-04-15T18:30:25 IST" duration-ms="5936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCategories -->
+        <test-method signature="SearchCategories()[pri:9, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:30:25 IST" name="SearchCategories" finished-at="2024-04-15T18:30:31 IST" duration-ms="6519" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchCategories -->
+        <test-method signature="addproducts()[pri:10, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:30:31 IST" name="addproducts" finished-at="2024-04-15T18:31:11 IST" duration-ms="40029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addproducts -->
+        <test-method is-config="true" signature="dpMethod()[pri:0, instance:MaxFestprojectPackage.MaxFestProject@5158b42f]" started-at="2024-04-15T18:31:11 IST" name="dpMethod" finished-at="2024-04-15T18:31:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dpMethod -->
+      </class> <!-- MaxFestprojectPackage.MaxFestProject -->
+    </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 </testng-results>

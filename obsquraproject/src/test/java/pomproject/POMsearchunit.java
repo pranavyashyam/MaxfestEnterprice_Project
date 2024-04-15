@@ -26,10 +26,10 @@ public class POMsearchunit {
 	@FindBy(xpath = "//*[@id=\"unit_table_filter\"]/label/input")
 	public WebElement SearchUnit;
 
-	public void usernameSendKeys(String value) {
-
+	public void usernameSendKeys(String value) throws InterruptedException {
+		
 		action.sendkeys(SearchUnit, value);
-
+		wait.Normalwait(4000);
 	}
 
 	public String getTablevalue(String readConfigFile) {

@@ -1,4 +1,4 @@
-package Testproject;
+package MaxFestprojectPackage;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -6,7 +6,7 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import Excelread.Excel;
+import ExcelreadTestdata.TestdataExcel;
 import Extendreports.ExtentTestManager;
 import commonUtility.PropertyFileReader;
 import WaitUtility.WaitUtility;
@@ -35,7 +35,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class DemoProject extends ExtentTestManager {
+public class MaxFestProject extends ExtentTestManager {
 	public WebDriver driver;
 	Pomlogin login;
 	POMalert alert;
@@ -46,7 +46,7 @@ public class DemoProject extends ExtentTestManager {
 	POMaddcategory category;
 	POMsearchcategory search_category;
 	POMaddproduct add_pro;
-	Excel objLogin;
+	TestdataExcel objLogin;
 	WaitUtility wait;
 	PropertyFileReader objPropertyFileReader;
 
@@ -60,14 +60,13 @@ public class DemoProject extends ExtentTestManager {
 		login = new Pomlogin(driver);
 		login.username(value);
 		login.password(value1);
-		login.clickLoginBtn();
+		login.clickInvalidLoginBtn();
 		String expectedmsg = login.getinvalidMsg();
 		String errormsg = "These credentials do not match our records.";
 		SoftAssert objassert = new SoftAssert();
 		objassert.assertEquals(errormsg, expectedmsg);
 		objassert.assertAll();
 		System.out.println("expected msg and error msg are same");
-		wait.Normalwait(2000);
 		test.log(Status.PASS, "Test to validate invalid login ");
 
 	}
@@ -75,19 +74,16 @@ public class DemoProject extends ExtentTestManager {
 	@Test(priority = 2, groups = { "functional" }, enabled = true)
 
 	public void Login() throws IOException, InterruptedException {
-		objLogin = new Excel();
+		objLogin = new TestdataExcel();
 		wait = new WaitUtility(driver);
-		
-		String usernme = Excel.readStringData(1, 0);
-		String pswd = Excel.readIntegerData(1, 1);
-		System.out.println( usernme);
-		System.out.println( pswd);
+        String usernme = TestdataExcel.readStringData(1, 0);
+		String pswd = TestdataExcel.readIntegerData(1, 1);
+		System.out.println(usernme);
+		System.out.println(pswd);
 		login = new Pomlogin(driver);
 		login.username(usernme);
 		login.password(pswd);
-		wait.Normalwait(7000);
 		login.clickLoginBtn();
-		wait.Normalwait(9000);
 		String urlActual = login.getUrl();
 		System.out.println(urlActual);
 		String urlExpected = "https://qalegend.com/billing/public/home";
@@ -98,11 +94,12 @@ public class DemoProject extends ExtentTestManager {
 	}
 
 	@Test(priority = 3, groups = { "functional" })
-	public void alerttour() {
+	public void alerttour() throws InterruptedException {
 		alert = new POMalert(driver);
 		alert.clickBtn();
 		test.log(Status.PASS, "Test to validate alert button functionality");
 	}
+
 
 	@Test(priority = 4, enabled = true, groups = { "functional" })
 	public void clickBrand() throws InterruptedException, IOException {
@@ -111,20 +108,22 @@ public class DemoProject extends ExtentTestManager {
 		brand = new POMaddbrand(driver);
 		brand.clickbrand();
 		brand.clickbrand1();
-		wait.Normalwait(2000);
-		brand.brandName(objPropertyFileReader.readConfigFile("brand_data"));
-		brand.brandDesc(objPropertyFileReader.readConfigFile("brand_Desc"));
+		brand.brandName(PropertyFileReader.readConfigFile("brand_data"));
+		brand.brandDesc(PropertyFileReader.readConfigFile("brand_Desc"));
 		brand.brandSave();
+		String SuccessmsgActual = brand.getTextBrandAdd();
+		String SuccessmsgExpected = "Brands Manage your brands";
+		Assert.assertEquals(SuccessmsgActual,SuccessmsgExpected);
+		System.out.println("Passed : brand added");
 		test.log(Status.PASS, "Test to validate add brands ");
 	}
+
 	@Test(priority = 5, enabled = true, groups = { "functional" })
 	public void SearchBrand() throws InterruptedException, IOException {
 		objPropertyFileReader = new PropertyFileReader();
 		wait = new WaitUtility(driver);
 		search_brand = new Searchbrand(driver);
-		wait.Normalwait(7000);
 		search_brand.usernameSendKeys(objPropertyFileReader.readConfigFile("brand_data"));
-		wait.Normalwait(7000);
 		String brand_data = objPropertyFileReader.readConfigFile("brand_data");
 		String data = brand.getTablevalue(objPropertyFileReader.readConfigFile("brand_data"));
 		SoftAssert objassert = new SoftAssert();
@@ -140,21 +139,23 @@ public class DemoProject extends ExtentTestManager {
 		wait = new WaitUtility(driver);
 		unit = new POMaddunit(driver);
 		unit.clickBtn1();
-		wait.Normalwait(7000);
 		unit.usernameSendKeys(objPropertyFileReader.readConfigFile("unit_data"));
 		unit.usernameSendKeys1(objPropertyFileReader.readConfigFile("unit_Desc"));
 		unit.DropdownselectByIndex(1);
 		unit.unitSave();
-		wait.Normalwait(3000);
+		String unitSuccessActual = unit.getTextBrandAdd();
+		String unitSuccessExpected = "Units Manage your units";
+		Assert.assertEquals(unitSuccessActual, unitSuccessExpected);
+		System.out.println("Passed : unit added");
 		test.log(Status.PASS, "Test to validate add units functionality");
 	}
+
 	@Test(priority = 7, enabled = true, groups = { "functional" })
 	public void SerachUnit() throws InterruptedException, IOException {
 		objPropertyFileReader = new PropertyFileReader();
 		wait = new WaitUtility(driver);
 		search_unit = new POMsearchunit(driver);
 		search_unit.usernameSendKeys(objPropertyFileReader.readConfigFile("unit_data"));
-		wait.Normalwait(2000);
 		String unit_data = objPropertyFileReader.readConfigFile("unit_data");
 		String data = search_unit.getTablevalue(objPropertyFileReader.readConfigFile("unit_data"));
 		SoftAssert objassert = new SoftAssert();
@@ -171,22 +172,24 @@ public class DemoProject extends ExtentTestManager {
 		category = new POMaddcategory(driver);
 		category.clickcategory();
 		category.clickAddcategory();
-		wait.Normalwait(2000);
 		category.categoryName(objPropertyFileReader.readConfigFile("category_data"));
 		category.categoryDesc(objPropertyFileReader.readConfigFile("category_Desc"));
 		category.categorySave();
-		wait.Normalwait(2000);
+		String CategorySuccessActual = category.getTextCategoryAdd();
+		String CategorySuccessExpected = "Categories Manage your categories";
+		Assert.assertEquals(CategorySuccessActual, CategorySuccessExpected);
+		System.out.println("Passed : category added");
 		test.log(Status.PASS, "Test to validate add category   functionality");
 
 	}
-	@Test(priority = 9, enabled = true, groups = { "functional" })
+
+	@Test(priority = 9, enabled =true, groups = { "functional" })
 	public void SearchCategories() throws InterruptedException, IOException {
 		objPropertyFileReader = new PropertyFileReader();
 		wait = new WaitUtility(driver);
 		search_category = new POMsearchcategory(driver);
 		category.clickcategory();
 		search_category.usernameSendKeys(objPropertyFileReader.readConfigFile("category_data"));
-		wait.Normalwait(2000);
 		String category_data = objPropertyFileReader.readConfigFile("category_data");
 		String data = search_category.getTablevalue(objPropertyFileReader.readConfigFile("category_data"));
 		SoftAssert objassert = new SoftAssert();
@@ -196,35 +199,21 @@ public class DemoProject extends ExtentTestManager {
 		test.log(Status.PASS, "Test to validate search category  functionality");
 
 	}
-
 	@Test(priority = 10, enabled = true, groups = { "functional" })
 	public void addproducts() throws InterruptedException, IOException {
 		wait = new WaitUtility(driver);
 		add_pro = new POMaddproduct(driver);
-		// search_category=new POMsearchcategory(driver);
-		wait.Normalwait(2000);
 		add_pro.clickpro();
 		add_pro.proName(objPropertyFileReader.readConfigFile("Product_data"));
-		wait.Normalwait(2000);
 		add_pro.DropdownselectByIndex(1);
-		wait.Normalwait(2000);
 		add_pro.DropdownselectByIndex(1);
-		wait.Normalwait(2000);
 		add_pro.DropdownselectByIndex(1);
-		wait.Normalwait(2000);
 		add_pro.proName1("2");
-		wait.Normalwait(2000);
 		add_pro.proName2("3");
-		wait.Normalwait(2000);
 		add_pro.proName3("3");
-		wait.Normalwait(2000);
 		add_pro.proName4("3");
-		wait.Normalwait(2000);
 		add_pro.DropdownselectByIndex(1);
-		wait.Normalwait(2000);
 		add_pro.clicksave();
-		wait.Normalwait(2000);
-		wait.Normalwait(2000);
 		String addProduct_data = objPropertyFileReader.readConfigFile("addProduct_data");
 		String data = add_pro.getValue("add product header found");
 		SoftAssert objassert = new SoftAssert();
@@ -234,6 +223,7 @@ public class DemoProject extends ExtentTestManager {
 		test.log(Status.PASS, "Test to validate add products tab functionality");
 	}
 
+	
 	@BeforeTest
 	@Parameters({ "Browser", "Url" })
 	public void beforeTest(String Browser, String Url) {
@@ -245,9 +235,9 @@ public class DemoProject extends ExtentTestManager {
 	}
 
 	@AfterTest
-	public void afterTest() {
-		driver.close();
-	}
+	//public void afterTest() {
+		//driver.close();
+//	}
 
 	@DataProvider(name = "data-provider")
 	public Object[][] dpMethod() {

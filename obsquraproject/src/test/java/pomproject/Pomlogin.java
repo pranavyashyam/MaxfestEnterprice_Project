@@ -22,7 +22,8 @@ public class Pomlogin {
 	WebDriver driver;
 	WaitUtility wait;
 	DriverAction action;
-	 static String configpath="\\src\\main\\resources\\Screenshot\\test";
+	static String configpath = "\\src\\main\\resources\\Screenshot\\test";
+
 	public Pomlogin(WebDriver driver) {
 
 		this.driver = driver;
@@ -30,6 +31,7 @@ public class Pomlogin {
 		wait = new WaitUtility(driver);
 		action = new DriverAction(driver);
 	}
+
 	@FindBy(xpath = "//*[@id='username']")
 	public WebElement username;
 	@FindBy(xpath = "//*[@id='password']")
@@ -37,15 +39,26 @@ public class Pomlogin {
 	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement loginbtn;
 
-	public void clickLoginBtn() {
+	public void clickInvalidLoginBtn() throws InterruptedException {
 
 		action.click(loginbtn);
+		wait.Normalwait(2000);
+		username.clear();
 
 	}
 
-	public void username(String Value) throws IOException {
+	public void clickLoginBtn() throws InterruptedException {
 
-		action.sendkeys(username, Value);
+		action.click(loginbtn);
+		wait.Normalwait(2000);
+
+	}
+
+	public void username(String Value) throws IOException, InterruptedException {
+		
+		username.sendKeys(Value);
+
+//action.sendkeys(username, Value);
 
 	}
 
@@ -61,36 +74,39 @@ public class Pomlogin {
 		return message;
 	}
 
-
-
 	public String getUrl() {
-	
+
 		String text = "https://qalegend.com/billing/public/home";
 		return text;// TODO Auto-generated method stub
-		
+
 	}
 
 	public void Screenshot() throws IOException {
-		Calendar cal=Calendar.getInstance();
-		java.util.Date time=cal.getTime();
-		String timestamp=time.toString().replace(":","" ).replace("","");
+		Calendar cal = Calendar.getInstance();
+		java.util.Date time = cal.getTime();
+		String timestamp = time.toString().replace(":", "").replace("", "");
 		System.out.println(time);
 		System.out.println(timestamp);
-		TakesScreenshot scrShot =((TakesScreenshot)driver); 
-  
- 	       //Call getScreenshotAs method to create image file 
-  
- 	               File SrcFile=scrShot.getScreenshotAs(OutputType.FILE); 
-  
- 	           //Move image file to new destination 
- 	              String projectpath=System.getProperty("user.dir");
- 	            
- 	               File DestFile=new File(projectpath+configpath+timestamp+".jpg"); 
-  
- 	               //Copy file at destination 
-  
- 	               Files.copy(SrcFile, DestFile); // TODO Auto-generated method stub
-		
+		TakesScreenshot scrShot = ((TakesScreenshot) driver);
+
+		// Call getScreenshotAs method to create image file
+
+		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+
+		// Move image file to new destination
+		String projectpath = System.getProperty("user.dir");
+
+		File DestFile = new File(projectpath + configpath + timestamp + ".jpg");
+
+		// Copy file at destination
+
+		Files.copy(SrcFile, DestFile); // TODO Auto-generated method stub
+
+	}
+
+	public void clear() {
+		// TODO Auto-generated method stub
+
 	}
 
 }

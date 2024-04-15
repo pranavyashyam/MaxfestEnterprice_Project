@@ -1,4 +1,4 @@
-package Excelread;
+package ExcelreadTestdata;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,9 +14,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * 2.poi-ooxml
 
  * */
-public class Excel {
+public class TestdataExcel {
 	
-	static String configpath="\\src\\main\\resources\\Excelpackage\\Book2.xlsx";
+	static String configpath="\\src\\main\\resources\\TestdataExcelpackage\\Testdata.xlsx";
 	public static XSSFWorkbook w;// used to save excel workbook object
 
 	public static XSSFSheet s;// used to hold excel sheet object
@@ -43,7 +43,7 @@ public class Excel {
 	public static String readIntegerData(int i, int j) throws IOException {
 		String projectpath=System.getProperty("user.dir");
 
-		f = new FileInputStream(projectpath+"\\src\\main\\resources\\Excelpackage\\Book2.xlsx");
+		f = new FileInputStream(projectpath+configpath);
 		w = new XSSFWorkbook(f);
 
 		s = w.getSheet("Sheet1");
@@ -55,6 +55,17 @@ public class Excel {
 		int value = (int) c.getNumericCellValue(); // typecasted to integer
 
 		return String.valueOf(value);
+
+	}
+	public static void main(String[] args) throws IOException {
+
+		String name = TestdataExcel.readStringData(3, 0);
+
+		System.out.println("Name :" + "\t" + name);
+
+		String id = TestdataExcel.readIntegerData(3, 1);
+
+		System.out.println("id :" + "\t" + id);
 
 	}
 

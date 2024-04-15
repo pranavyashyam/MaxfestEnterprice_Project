@@ -72,20 +72,21 @@ public class POMaddunit {
 
 	
 
-	public void usernameSendKeys(String value) {
-
+	public void usernameSendKeys(String value) throws InterruptedException {
+		wait.Normalwait(7000);
 		action.sendkeys(name, value);
 
 	}
 
-	public void usernameSendKeys1(String value) {
-
+	public void usernameSendKeys1(String value) throws InterruptedException {
+		wait.Normalwait(3000);
 		action.sendkeys(shortname, value);
 
 	}
-	 public void unitSave() {
+	 public void unitSave() throws InterruptedException {
 			// TODO Auto-generated method stub
 			action.click(save);
+			wait.Normalwait(3000);
 		}
 
 	public void DropdownselectByIndex(int value) {
@@ -96,6 +97,12 @@ public class POMaddunit {
 		// TODO Auto-generated method stub
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();",product);
+		
+	}
+	public String getTextBrandAdd() {
+		WebElement alertmsg = driver.findElement(By.xpath("/html/body/div[2]/div[1]/section[1]/h1"));
+		String message = alertmsg.getText();// TODO Auto-generated method stub
+		return message;// TODO Auto-generated method stub
 		
 	}
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" parallel="tests" thread-count="2">
+  <test name="Test1">
+	  <parameter name="Browser" value="Chrome" ></parameter>
+	  <parameter name="Url" value=" https://qalegend.com/billing/public/products" ></parameter>
+    <classes>
+      <class name="MaxFestprojectPackage.MaxFestProject"/>
+      </classes>
+</test>
+
+<!-- Test -->
+</suite> <!-- Suite -->

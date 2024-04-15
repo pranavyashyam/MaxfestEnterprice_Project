@@ -22,8 +22,8 @@ public class POMalert {
 	@FindBy(xpath="//*[@id=\"step-0\"]/div[3]/button[3]")
 	public WebElement Endtour;
 	 
-	 public void clickBtn() {
-			
+	 public void clickBtn() throws InterruptedException {
+		wait.Normalwait(3000);	
 		 action.click(Endtour);
 		
 	}
