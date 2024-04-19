@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite thread-count="2" name="Suite">
+	<groups>
+<run>
+<include name="functional"/>
+</run>
+</groups>
+<listeners>
+	<listener class-name="TestngUtility.RetryListener"/>
+	</listeners>
+	 <test thread-count="2" name="Test">
+	 <parameter name="Browser" value="Chrome" ></parameter>
+	  <parameter name="Url" value=" https://qalegend.com/billing/public/products" ></parameter>
+    <classes>
+      <class name="Testcases.MaxFestProject"/>
+      <class name="Testcases.MaxFestproject2"/>
+       </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
